@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6b2b3ace78f34f37a1c523ad76838444 {
+                #map_2618443a6e46579e58a3163e10724baa {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -34,18 +34,28 @@
                 }
             </style>
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_6b2b3ace78f34f37a1c523ad76838444" ></div>
+            <div class="folium-map" id="map_2618443a6e46579e58a3163e10724baa" ></div>
         
 </body>
 <script>
     
     
-            var map_6b2b3ace78f34f37a1c523ad76838444 = L.map(
-                "map_6b2b3ace78f34f37a1c523ad76838444",
+            var map_2618443a6e46579e58a3163e10724baa = L.map(
+                "map_2618443a6e46579e58a3163e10724baa",
                 {
                     center: [26.3, 127.75],
                     crs: L.CRS.EPSG3857,
@@ -59,519 +69,794 @@
 
         
     
-            var tile_layer_a18efdffbdd56a9fe409f35b7c9f2818 = L.tileLayer(
+            var tile_layer_571650a33774d1d23c1d18ddbfcb3632 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
         
     
-            var feature_group_e7d59fed070688333c1fa76c2bc891ba = L.featureGroup(
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+        
+    
+            var measure_control_365475a87d55e49955588598a3be2559 = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "kilometers", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "meters"});
+            map_2618443a6e46579e58a3163e10724baa.addControl(measure_control_365475a87d55e49955588598a3be2559);
+
+        
+    
+            var tile_layer_aec7f95c86a98f9a22d712e6335b3c52 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_05ae7f3b94582d0405af428e052d5b68 = new L.Control.MiniMap(
+                tile_layer_aec7f95c86a98f9a22d712e6335b3c52,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": true, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_2618443a6e46579e58a3163e10724baa.addControl(mini_map_05ae7f3b94582d0405af428e052d5b68);
+        
+    
+            var locate_control_4204742cb9684fb0740a40d25bf0bdc3 = L.control.locate(
                 {}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+            
         
     
-            var marker_789576962396d32217f8353ac931ce9e = L.marker(
+            var mouse_position_a6e1040aed44eb32bd73cbd4ae0222b6 = new L.Control.MousePosition(
+                {"emptyString": "Unavailable", "lngFirst": false, "numDigits": 5, "position": "bottomleft", "prefix": "Lat , Lng", "separator": " , "}
+            );
+            mouse_position_a6e1040aed44eb32bd73cbd4ae0222b6.options["latFormatter"] =
+                undefined;
+            mouse_position_a6e1040aed44eb32bd73cbd4ae0222b6.options["lngFormatter"] =
+                undefined;
+            map_2618443a6e46579e58a3163e10724baa.addControl(mouse_position_a6e1040aed44eb32bd73cbd4ae0222b6);
+        
+    
+            var feature_group_66d3d3b2c5cd669e7236fd8cdf6d5d3f = L.featureGroup(
+                {}
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+        
+    
+            var marker_3b1e485cfca82c158ea686ef3ab74aac = L.marker(
                 [26.221989, 127.681999],
                 {}
-            ).addTo(feature_group_e7d59fed070688333c1fa76c2bc891ba);
+            ).addTo(feature_group_66d3d3b2c5cd669e7236fd8cdf6d5d3f);
         
     
-            var icon_4b470251c5456ffe92239a9abab5c813 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var icon_1f8b9717db13764fab322df71478e36b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_789576962396d32217f8353ac931ce9e.setIcon(icon_4b470251c5456ffe92239a9abab5c813);
+            marker_3b1e485cfca82c158ea686ef3ab74aac.setIcon(icon_1f8b9717db13764fab322df71478e36b);
         
     
-        var popup_7ed74e0ac3bf1d404de1b710e30dd78b = L.popup({"maxWidth": "100%"});
+        var popup_02caad468d19fe97077c564a149a0e53 = L.popup({"maxWidth": "100%"});
 
         
-            var html_fd21ec114288babdf50d2e2191fd748d = $(`<div id="html_fd21ec114288babdf50d2e2191fd748d" style="width: 100.0%; height: 100.0%;">🏨 LACER OKINAWA NAHA Miebashi（美栄橋） 〒900-0016 沖縄県那覇市前島3-7-7</div>`)[0];
-            popup_7ed74e0ac3bf1d404de1b710e30dd78b.setContent(html_fd21ec114288babdf50d2e2191fd748d);
+            var html_90f4a57c8176869b330e80b3853be98d = $(`<div id="html_90f4a57c8176869b330e80b3853be98d" style="width: 100.0%; height: 100.0%;">🏨 LACER OKINAWA NAHA Miebashi（美栄橋） 〒900-0016 沖縄県那覇市前島3-7-7</div>`)[0];
+            popup_02caad468d19fe97077c564a149a0e53.setContent(html_90f4a57c8176869b330e80b3853be98d);
         
 
-        marker_789576962396d32217f8353ac931ce9e.bindPopup(popup_7ed74e0ac3bf1d404de1b710e30dd78b)
+        marker_3b1e485cfca82c158ea686ef3ab74aac.bindPopup(popup_02caad468d19fe97077c564a149a0e53)
         ;
 
         
     
     
-            var marker_c94ca681589fbd217812453b082523ff = L.marker(
+            var marker_035e5ddd3ba0c390849b2cf83b08540c = L.marker(
                 [26.362895, 127.808937],
                 {}
-            ).addTo(feature_group_e7d59fed070688333c1fa76c2bc891ba);
+            ).addTo(feature_group_66d3d3b2c5cd669e7236fd8cdf6d5d3f);
         
     
-            var icon_905ba2e3d9e0787d9b048792326e56e0 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var icon_40b4785f8e71350de61db80916ca5b38 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_c94ca681589fbd217812453b082523ff.setIcon(icon_905ba2e3d9e0787d9b048792326e56e0);
+            marker_035e5ddd3ba0c390849b2cf83b08540c.setIcon(icon_40b4785f8e71350de61db80916ca5b38);
         
     
-        var popup_9a955f7cf09b7aaf21eec5a9fb44c84e = L.popup({"maxWidth": "100%"});
+        var popup_3d0d78e181e5825ccd47940a8c7f92d2 = L.popup({"maxWidth": "100%"});
 
         
-            var html_0c72d637ae1d3af86b0181658d4c2df1 = $(`<div id="html_0c72d637ae1d3af86b0181658d4c2df1" style="width: 100.0%; height: 100.0%;">🏨 Riverside Chibana（リバーサイド知花） 沖縄県沖縄市知花3丁目19番20号</div>`)[0];
-            popup_9a955f7cf09b7aaf21eec5a9fb44c84e.setContent(html_0c72d637ae1d3af86b0181658d4c2df1);
+            var html_ec887e8f35fd88e721de514f7875c36c = $(`<div id="html_ec887e8f35fd88e721de514f7875c36c" style="width: 100.0%; height: 100.0%;">🏨 Riverside Chibana（リバーサイド知花） 沖縄県沖縄市知花3丁目19番20号</div>`)[0];
+            popup_3d0d78e181e5825ccd47940a8c7f92d2.setContent(html_ec887e8f35fd88e721de514f7875c36c);
         
 
-        marker_c94ca681589fbd217812453b082523ff.bindPopup(popup_9a955f7cf09b7aaf21eec5a9fb44c84e)
+        marker_035e5ddd3ba0c390849b2cf83b08540c.bindPopup(popup_3d0d78e181e5825ccd47940a8c7f92d2)
         ;
 
         
     
     
-            var marker_eefaecba828ee726a4c9a8360ae324e1 = L.marker(
+            var marker_14f960da70a87ca6a487f400acc7e890 = L.marker(
                 [26.219794, 127.68362],
                 {}
-            ).addTo(feature_group_e7d59fed070688333c1fa76c2bc891ba);
+            ).addTo(feature_group_66d3d3b2c5cd669e7236fd8cdf6d5d3f);
         
     
-            var icon_5f8ef779778c8b6ef51c54c017f28649 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            var icon_c5c96dfcabc875761442979f1ee11c15 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_eefaecba828ee726a4c9a8360ae324e1.setIcon(icon_5f8ef779778c8b6ef51c54c017f28649);
+            marker_14f960da70a87ca6a487f400acc7e890.setIcon(icon_c5c96dfcabc875761442979f1ee11c15);
         
     
-        var popup_ea54e2a07096ebf1ee0a450ce2a7ccca = L.popup({"maxWidth": "100%"});
+        var popup_4f4c5e104ca5a4755613706e7c93f11b = L.popup({"maxWidth": "100%"});
 
         
-            var html_45dc8d9021e8f7896bf38f679f114915 = $(`<div id="html_45dc8d9021e8f7896bf38f679f114915" style="width: 100.0%; height: 100.0%;">🏨 Residential Hotel Naha 2-24-15 Kumoji, Naha 900-0015</div>`)[0];
-            popup_ea54e2a07096ebf1ee0a450ce2a7ccca.setContent(html_45dc8d9021e8f7896bf38f679f114915);
+            var html_5ed03463abb897d9b3db5b4f39f20f1f = $(`<div id="html_5ed03463abb897d9b3db5b4f39f20f1f" style="width: 100.0%; height: 100.0%;">🏨 Residential Hotel Naha 2-24-15 Kumoji, Naha 900-0015</div>`)[0];
+            popup_4f4c5e104ca5a4755613706e7c93f11b.setContent(html_5ed03463abb897d9b3db5b4f39f20f1f);
         
 
-        marker_eefaecba828ee726a4c9a8360ae324e1.bindPopup(popup_ea54e2a07096ebf1ee0a450ce2a7ccca)
+        marker_14f960da70a87ca6a487f400acc7e890.bindPopup(popup_4f4c5e104ca5a4755613706e7c93f11b)
         ;
 
         
     
     
-            var feature_group_bbddea245d3c3b059c64dff251667081 = L.featureGroup(
+            var feature_group_8893c2225640ccda79a6dbdee7c4bca1 = L.featureGroup(
                 {}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
         
     
-            var marker_57dd5150d6239984159141e5aac6bc8b = L.marker(
+            var marker_6a4525f4d8470fc04b0ddce9f15b0637 = L.marker(
                 [26.157687, 127.650913],
                 {}
-            ).addTo(feature_group_bbddea245d3c3b059c64dff251667081);
+            ).addTo(feature_group_8893c2225640ccda79a6dbdee7c4bca1);
         
     
-            var icon_ffc2f61e3a7aad3035d6ad30608fa84c = L.AwesomeMarkers.icon(
+            var icon_e2eb65b431aafdcb71d2a04bcf55c871 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_57dd5150d6239984159141e5aac6bc8b.setIcon(icon_ffc2f61e3a7aad3035d6ad30608fa84c);
+            marker_6a4525f4d8470fc04b0ddce9f15b0637.setIcon(icon_e2eb65b431aafdcb71d2a04bcf55c871);
         
     
-        var popup_0dacae75192aea2dce23542fc59ad2b9 = L.popup({"maxWidth": "100%"});
+        var popup_9c2401fe3bde4820af29c24ce013f3e0 = L.popup({"maxWidth": "100%"});
 
         
-            var html_3f59e0515e2c6d16ff0c56ca7bb3c610 = $(`<div id="html_3f59e0515e2c6d16ff0c56ca7bb3c610" style="width: 100.0%; height: 100.0%;">2/5｜DMM かりゆし水族館</div>`)[0];
-            popup_0dacae75192aea2dce23542fc59ad2b9.setContent(html_3f59e0515e2c6d16ff0c56ca7bb3c610);
+            var html_4fcd0a48eeebf259bb0ac5c42e00c78a = $(`<div id="html_4fcd0a48eeebf259bb0ac5c42e00c78a" style="width: 100.0%; height: 100.0%;">1. 2/5｜DMM かりゆし水族館</div>`)[0];
+            popup_9c2401fe3bde4820af29c24ce013f3e0.setContent(html_4fcd0a48eeebf259bb0ac5c42e00c78a);
         
 
-        marker_57dd5150d6239984159141e5aac6bc8b.bindPopup(popup_0dacae75192aea2dce23542fc59ad2b9)
+        marker_6a4525f4d8470fc04b0ddce9f15b0637.bindPopup(popup_9c2401fe3bde4820af29c24ce013f3e0)
         ;
 
         
     
     
-            var marker_557e65b15e4c9f75c41e236a9fe19e10 = L.marker(
+            marker_6a4525f4d8470fc04b0ddce9f15b0637.bindTooltip(
+                `<div>
+                     2/5｜DMM かりゆし水族館
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_47b48bf0254068a5d84b23efaf4d0f2b = L.marker(
                 [26.17602, 127.6406],
                 {}
-            ).addTo(feature_group_bbddea245d3c3b059c64dff251667081);
+            ).addTo(feature_group_8893c2225640ccda79a6dbdee7c4bca1);
         
     
-            var icon_e23a3626622999ccc03c82a22731f663 = L.AwesomeMarkers.icon(
+            var icon_f317cba8b4055bf95ecebfb4dde24b98 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_557e65b15e4c9f75c41e236a9fe19e10.setIcon(icon_e23a3626622999ccc03c82a22731f663);
+            marker_47b48bf0254068a5d84b23efaf4d0f2b.setIcon(icon_f317cba8b4055bf95ecebfb4dde24b98);
         
     
-        var popup_c61c8989a3e8d6453c555b14661b7109 = L.popup({"maxWidth": "100%"});
+        var popup_2e5f97aee227cd4e84e8231fb90f6f2a = L.popup({"maxWidth": "100%"});
 
         
-            var html_22b398b6bb6112ce87c4a0e9f8e69038 = $(`<div id="html_22b398b6bb6112ce87c4a0e9f8e69038" style="width: 100.0%; height: 100.0%;">2/5｜瀬長島（ウミカジテラス）</div>`)[0];
-            popup_c61c8989a3e8d6453c555b14661b7109.setContent(html_22b398b6bb6112ce87c4a0e9f8e69038);
+            var html_d1f3da6ce8b726628dd79f39ed61e8e8 = $(`<div id="html_d1f3da6ce8b726628dd79f39ed61e8e8" style="width: 100.0%; height: 100.0%;">2. 2/5｜瀬長島（ウミカジテラス）</div>`)[0];
+            popup_2e5f97aee227cd4e84e8231fb90f6f2a.setContent(html_d1f3da6ce8b726628dd79f39ed61e8e8);
         
 
-        marker_557e65b15e4c9f75c41e236a9fe19e10.bindPopup(popup_c61c8989a3e8d6453c555b14661b7109)
+        marker_47b48bf0254068a5d84b23efaf4d0f2b.bindPopup(popup_2e5f97aee227cd4e84e8231fb90f6f2a)
         ;
 
         
     
     
-            var marker_d0957275477e1f8ae48e1409d8e61bae = L.marker(
+            marker_47b48bf0254068a5d84b23efaf4d0f2b.bindTooltip(
+                `<div>
+                     2/5｜瀬長島（ウミカジテラス）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c7e4109449be4f5f5c1fa06a189946ca = L.marker(
                 [26.158889, 127.656944],
                 {}
-            ).addTo(feature_group_bbddea245d3c3b059c64dff251667081);
+            ).addTo(feature_group_8893c2225640ccda79a6dbdee7c4bca1);
         
     
-            var icon_a6fbce62f3a857cfa96e49775c8b833c = L.AwesomeMarkers.icon(
+            var icon_6a66efe8fadd362e59ad05cb15306617 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_d0957275477e1f8ae48e1409d8e61bae.setIcon(icon_a6fbce62f3a857cfa96e49775c8b833c);
+            marker_c7e4109449be4f5f5c1fa06a189946ca.setIcon(icon_6a66efe8fadd362e59ad05cb15306617);
         
     
-        var popup_15a4a148773b1745ad6df268645ba8fe = L.popup({"maxWidth": "100%"});
+        var popup_f7caec8aff3148b26600094e15edde94 = L.popup({"maxWidth": "100%"});
 
         
-            var html_d8d53ee002bce17bbe610d1a8fe10fca = $(`<div id="html_d8d53ee002bce17bbe610d1a8fe10fca" style="width: 100.0%; height: 100.0%;">2/5｜沖縄アウトレットモール あしびなー</div>`)[0];
-            popup_15a4a148773b1745ad6df268645ba8fe.setContent(html_d8d53ee002bce17bbe610d1a8fe10fca);
+            var html_c4a8c4121c827c88a73bdbb46ab11d28 = $(`<div id="html_c4a8c4121c827c88a73bdbb46ab11d28" style="width: 100.0%; height: 100.0%;">3. 2/5｜沖縄アウトレットモール あしびなー</div>`)[0];
+            popup_f7caec8aff3148b26600094e15edde94.setContent(html_c4a8c4121c827c88a73bdbb46ab11d28);
         
 
-        marker_d0957275477e1f8ae48e1409d8e61bae.bindPopup(popup_15a4a148773b1745ad6df268645ba8fe)
+        marker_c7e4109449be4f5f5c1fa06a189946ca.bindPopup(popup_f7caec8aff3148b26600094e15edde94)
         ;
 
         
     
     
-            var poly_line_3b9cd08ae73318e63aff7b8d5adea9cf = L.polyline(
+            marker_c7e4109449be4f5f5c1fa06a189946ca.bindTooltip(
+                `<div>
+                     2/5｜沖縄アウトレットモール あしびなー
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6f6407e3f4bb0263aece0479214982ce = L.polyline(
                 [[26.157687, 127.650913], [26.17602, 127.6406], [26.158889, 127.656944]],
-                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(feature_group_bbddea245d3c3b059c64dff251667081);
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_8893c2225640ccda79a6dbdee7c4bca1);
         
     
-            var feature_group_3999debf9b11698fb3a72a810b7f41cd = L.featureGroup(
+            var marker_833e332fef1bcccc3fdd49f9f20722ec = L.marker(
+                [26.221989, 127.681999],
                 {}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(feature_group_8893c2225640ccda79a6dbdee7c4bca1);
         
     
-            var marker_a40a30d89e905263746db631e8897dcf = L.marker(
+            var icon_7f6fea1745a43dea0507e72db9ef70c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "play", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_833e332fef1bcccc3fdd49f9f20722ec.setIcon(icon_7f6fea1745a43dea0507e72db9ef70c6);
+        
+    
+        var popup_ba3051ac252c975d740427a624b5c35b = L.popup({"maxWidth": 300});
+
+        
+            var html_99aece26476eb7893e8fbf23c50f5da1 = $(`<div id="html_99aece26476eb7893e8fbf23c50f5da1" style="width: 100.0%; height: 100.0%;"><b>2/5 自駕路線（從 LACER 出發/返回）</b><br><a href="https://www.google.com/maps/dir/?api=1&origin=26.221989,127.681999&destination=26.221989,127.681999&travelmode=driving&waypoints=26.157687,127.650913|26.17602,127.6406|26.158889,127.656944" target="_blank">在 Google Maps 開啟導航</a></div>`)[0];
+            popup_ba3051ac252c975d740427a624b5c35b.setContent(html_99aece26476eb7893e8fbf23c50f5da1);
+        
+
+        marker_833e332fef1bcccc3fdd49f9f20722ec.bindPopup(popup_ba3051ac252c975d740427a624b5c35b)
+        ;
+
+        
+    
+    
+            var feature_group_8912f65ab2888fa9316ad0d5d890bad2 = L.featureGroup(
+                {}
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+        
+    
+            var marker_ce0cbc2b362eebcb7ca414408be502d2 = L.marker(
                 [26.327833, 127.803417],
                 {}
-            ).addTo(feature_group_3999debf9b11698fb3a72a810b7f41cd);
+            ).addTo(feature_group_8912f65ab2888fa9316ad0d5d890bad2);
         
     
-            var icon_e4c7dee7decfddeb630c89f18da0f127 = L.AwesomeMarkers.icon(
+            var icon_661c776b30e074a1361e06b3a9129802 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_a40a30d89e905263746db631e8897dcf.setIcon(icon_e4c7dee7decfddeb630c89f18da0f127);
+            marker_ce0cbc2b362eebcb7ca414408be502d2.setIcon(icon_661c776b30e074a1361e06b3a9129802);
         
     
-        var popup_21caa6de117b5729b82616e7eff956ee = L.popup({"maxWidth": "100%"});
+        var popup_3bc5d8463df9c6c85f9ff34a9d782e45 = L.popup({"maxWidth": "100%"});
 
         
-            var html_591da0002201f9dc764bf5ee2da95863 = $(`<div id="html_591da0002201f9dc764bf5ee2da95863" style="width: 100.0%; height: 100.0%;">2/6｜沖縄こどもの国（Okinawa Zoo & Museum）</div>`)[0];
-            popup_21caa6de117b5729b82616e7eff956ee.setContent(html_591da0002201f9dc764bf5ee2da95863);
+            var html_4b2e180d06e1046b93980bd740e512c0 = $(`<div id="html_4b2e180d06e1046b93980bd740e512c0" style="width: 100.0%; height: 100.0%;">1. 2/6｜沖縄こどもの国（Okinawa Zoo & Museum）</div>`)[0];
+            popup_3bc5d8463df9c6c85f9ff34a9d782e45.setContent(html_4b2e180d06e1046b93980bd740e512c0);
         
 
-        marker_a40a30d89e905263746db631e8897dcf.bindPopup(popup_21caa6de117b5729b82616e7eff956ee)
+        marker_ce0cbc2b362eebcb7ca414408be502d2.bindPopup(popup_3bc5d8463df9c6c85f9ff34a9d782e45)
         ;
 
         
     
     
-            var marker_3679050d6d1ca70c1ff5291912446d19 = L.marker(
+            marker_ce0cbc2b362eebcb7ca414408be502d2.bindTooltip(
+                `<div>
+                     2/6｜沖縄こどもの国（Okinawa Zoo & Museum）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ec5af3e4b96120324c3ef7635898c54d = L.marker(
                 [26.314326, 127.795648],
                 {}
-            ).addTo(feature_group_3999debf9b11698fb3a72a810b7f41cd);
+            ).addTo(feature_group_8912f65ab2888fa9316ad0d5d890bad2);
         
     
-            var icon_b715d045231f17815e1ac3b4d0b229de = L.AwesomeMarkers.icon(
+            var icon_d684ad08512f240fafdff5e54351ce2e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_3679050d6d1ca70c1ff5291912446d19.setIcon(icon_b715d045231f17815e1ac3b4d0b229de);
+            marker_ec5af3e4b96120324c3ef7635898c54d.setIcon(icon_d684ad08512f240fafdff5e54351ce2e);
         
     
-        var popup_306c285802645ef67e447aaf9d587843 = L.popup({"maxWidth": "100%"});
+        var popup_d65cfb27e439dadda713b5b8aaa39c78 = L.popup({"maxWidth": "100%"});
 
         
-            var html_99b33b34765e1897af063367d7061182 = $(`<div id="html_99b33b34765e1897af063367d7061182" style="width: 100.0%; height: 100.0%;">2/6｜イオンモール沖縄ライカム（AEON Mall Okinawa Rycom）</div>`)[0];
-            popup_306c285802645ef67e447aaf9d587843.setContent(html_99b33b34765e1897af063367d7061182);
+            var html_ff6b4633e1e20b6c979b0ad3b356482c = $(`<div id="html_ff6b4633e1e20b6c979b0ad3b356482c" style="width: 100.0%; height: 100.0%;">2. 2/6｜イオンモール沖縄ライカム（AEON Mall Okinawa Rycom）</div>`)[0];
+            popup_d65cfb27e439dadda713b5b8aaa39c78.setContent(html_ff6b4633e1e20b6c979b0ad3b356482c);
         
 
-        marker_3679050d6d1ca70c1ff5291912446d19.bindPopup(popup_306c285802645ef67e447aaf9d587843)
+        marker_ec5af3e4b96120324c3ef7635898c54d.bindPopup(popup_d65cfb27e439dadda713b5b8aaa39c78)
         ;
 
         
     
     
-            var poly_line_628f43f20e85e02f645c31c4bd9f2ef3 = L.polyline(
+            marker_ec5af3e4b96120324c3ef7635898c54d.bindTooltip(
+                `<div>
+                     2/6｜イオンモール沖縄ライカム（AEON Mall Okinawa Rycom）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6da1791cba32c771abd95e338251d9a3 = L.polyline(
                 [[26.327833, 127.803417], [26.314326, 127.795648]],
-                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(feature_group_3999debf9b11698fb3a72a810b7f41cd);
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_8912f65ab2888fa9316ad0d5d890bad2);
         
     
-            var feature_group_1fe93c8b18caee17a5596083e51dfc4b = L.featureGroup(
+            var marker_831dd9cc6618dedc219221d7d247eb83 = L.marker(
+                [26.362895, 127.808937],
                 {}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(feature_group_8912f65ab2888fa9316ad0d5d890bad2);
         
     
-            var marker_b9e300703ce49deecaa14bc1d9ccbe98 = L.marker(
-                [26.439817, 127.829342],
+            var icon_4b5dc24d2cdf0bd6194b3a6af41411b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "play", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_831dd9cc6618dedc219221d7d247eb83.setIcon(icon_4b5dc24d2cdf0bd6194b3a6af41411b7);
+        
+    
+        var popup_b4a1a6d39df346f50992c591d69aad90 = L.popup({"maxWidth": 300});
+
+        
+            var html_ec7b088c8e65c12c52b097c69f2b1fcf = $(`<div id="html_ec7b088c8e65c12c52b097c69f2b1fcf" style="width: 100.0%; height: 100.0%;"><b>2/6 自駕路線（從 Riverside 出發/返回）</b><br><a href="https://www.google.com/maps/dir/?api=1&origin=26.362895,127.808937&destination=26.362895,127.808937&travelmode=driving&waypoints=26.327833,127.803417|26.314326,127.795648" target="_blank">在 Google Maps 開啟導航</a></div>`)[0];
+            popup_b4a1a6d39df346f50992c591d69aad90.setContent(html_ec7b088c8e65c12c52b097c69f2b1fcf);
+        
+
+        marker_831dd9cc6618dedc219221d7d247eb83.bindPopup(popup_b4a1a6d39df346f50992c591d69aad90)
+        ;
+
+        
+    
+    
+            var feature_group_6dbc227f170fdfad23e6de7a626d72eb = L.featureGroup(
                 {}
-            ).addTo(feature_group_1fe93c8b18caee17a5596083e51dfc4b);
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
         
     
-            var icon_880e53ec41e6fb1dc95c9795c1041550 = L.AwesomeMarkers.icon(
+            var marker_bde102da19cef888d9666ab4c3d4e318 = L.marker(
+                [26.43892, 127.83136],
+                {}
+            ).addTo(feature_group_6dbc227f170fdfad23e6de7a626d72eb);
+        
+    
+            var icon_1e0e870d9bd3688b9e63dc0952025fb7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
             );
-            marker_b9e300703ce49deecaa14bc1d9ccbe98.setIcon(icon_880e53ec41e6fb1dc95c9795c1041550);
+            marker_bde102da19cef888d9666ab4c3d4e318.setIcon(icon_1e0e870d9bd3688b9e63dc0952025fb7);
         
     
-        var popup_f5a3904ede25594eede814516fc734d9 = L.popup({"maxWidth": "100%"});
+        var popup_68512b416be29b0646cb8ce53e47cb97 = L.popup({"maxWidth": "100%"});
 
         
-            var html_779c35eb255a38c101df954f41380bc7 = $(`<div id="html_779c35eb255a38c101df954f41380bc7" style="width: 100.0%; height: 100.0%;">2/7｜釣って見つけるぼうけんの国（うるま農場内）</div>`)[0];
-            popup_f5a3904ede25594eede814516fc734d9.setContent(html_779c35eb255a38c101df954f41380bc7);
+            var html_d58a6a71abf483c68fcda9726bf4b02b = $(`<div id="html_d58a6a71abf483c68fcda9726bf4b02b" style="width: 100.0%; height: 100.0%;">1. 2/7｜釣って見つけるぼうけんの国（うるま農場内）</div>`)[0];
+            popup_68512b416be29b0646cb8ce53e47cb97.setContent(html_d58a6a71abf483c68fcda9726bf4b02b);
         
 
-        marker_b9e300703ce49deecaa14bc1d9ccbe98.bindPopup(popup_f5a3904ede25594eede814516fc734d9)
+        marker_bde102da19cef888d9666ab4c3d4e318.bindPopup(popup_68512b416be29b0646cb8ce53e47cb97)
         ;
 
         
     
     
-            var marker_ce7fb1e82d6a018b4b67c62a392970b6 = L.marker(
+            marker_bde102da19cef888d9666ab4c3d4e318.bindTooltip(
+                `<div>
+                     2/7｜釣って見つけるぼうけんの国（うるま農場内）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_22536e517041bc2626e1d72d9ebae11e = L.marker(
                 [26.44111, 127.71361],
                 {}
-            ).addTo(feature_group_1fe93c8b18caee17a5596083e51dfc4b);
+            ).addTo(feature_group_6dbc227f170fdfad23e6de7a626d72eb);
         
     
-            var icon_6ef4d589433b42c01a6bc6c3232900ac = L.AwesomeMarkers.icon(
+            var icon_8b1c0ca43e9a15183a47d1c8cca03167 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
             );
-            marker_ce7fb1e82d6a018b4b67c62a392970b6.setIcon(icon_6ef4d589433b42c01a6bc6c3232900ac);
+            marker_22536e517041bc2626e1d72d9ebae11e.setIcon(icon_8b1c0ca43e9a15183a47d1c8cca03167);
         
     
-        var popup_3ced91a4f058c461e3c5f76b73196888 = L.popup({"maxWidth": "100%"});
+        var popup_505f698c8b6a27e312ab989a53c78cd4 = L.popup({"maxWidth": "100%"});
 
         
-            var html_672e03fbdb989e1d5c1916209231b249 = $(`<div id="html_672e03fbdb989e1d5c1916209231b249" style="width: 100.0%; height: 100.0%;">2/7｜残波岬灯台（登れる灯台）</div>`)[0];
-            popup_3ced91a4f058c461e3c5f76b73196888.setContent(html_672e03fbdb989e1d5c1916209231b249);
+            var html_d887efccffa686febd145c2fefe6d57d = $(`<div id="html_d887efccffa686febd145c2fefe6d57d" style="width: 100.0%; height: 100.0%;">2. 2/7｜残波岬灯台（登れる灯台）</div>`)[0];
+            popup_505f698c8b6a27e312ab989a53c78cd4.setContent(html_d887efccffa686febd145c2fefe6d57d);
         
 
-        marker_ce7fb1e82d6a018b4b67c62a392970b6.bindPopup(popup_3ced91a4f058c461e3c5f76b73196888)
+        marker_22536e517041bc2626e1d72d9ebae11e.bindPopup(popup_505f698c8b6a27e312ab989a53c78cd4)
         ;
 
         
     
     
-            var marker_adbb363b27526af268d30155fc8c13af = L.marker(
+            marker_22536e517041bc2626e1d72d9ebae11e.bindTooltip(
+                `<div>
+                     2/7｜残波岬灯台（登れる灯台）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5a9f485cdbaf1132973555320227ca80 = L.marker(
                 [26.315851, 127.757669],
                 {}
-            ).addTo(feature_group_1fe93c8b18caee17a5596083e51dfc4b);
+            ).addTo(feature_group_6dbc227f170fdfad23e6de7a626d72eb);
         
     
-            var icon_da2ea754cc9ab2e0cb773fe0bd33b95c = L.AwesomeMarkers.icon(
+            var icon_7f53b23ba4d94ffc94fbf742c9d2a88f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
             );
-            marker_adbb363b27526af268d30155fc8c13af.setIcon(icon_da2ea754cc9ab2e0cb773fe0bd33b95c);
+            marker_5a9f485cdbaf1132973555320227ca80.setIcon(icon_7f53b23ba4d94ffc94fbf742c9d2a88f);
         
     
-        var popup_fbd55dabd03ac312dae98bfcbf7450cd = L.popup({"maxWidth": "100%"});
+        var popup_aaef5b8cd4c5613e88fa21fde079f576 = L.popup({"maxWidth": "100%"});
 
         
-            var html_ba84ae4bc8699542940d148bf6e21942 = $(`<div id="html_ba84ae4bc8699542940d148bf6e21942" style="width: 100.0%; height: 100.0%;">2/7｜美浜アメリカンビレッジ</div>`)[0];
-            popup_fbd55dabd03ac312dae98bfcbf7450cd.setContent(html_ba84ae4bc8699542940d148bf6e21942);
+            var html_098a6ebab3e2f2cff3f4c5220b594f59 = $(`<div id="html_098a6ebab3e2f2cff3f4c5220b594f59" style="width: 100.0%; height: 100.0%;">3. 2/7｜美浜アメリカンビレッジ</div>`)[0];
+            popup_aaef5b8cd4c5613e88fa21fde079f576.setContent(html_098a6ebab3e2f2cff3f4c5220b594f59);
         
 
-        marker_adbb363b27526af268d30155fc8c13af.bindPopup(popup_fbd55dabd03ac312dae98bfcbf7450cd)
+        marker_5a9f485cdbaf1132973555320227ca80.bindPopup(popup_aaef5b8cd4c5613e88fa21fde079f576)
         ;
 
         
     
     
-            var poly_line_05e8adb14ad1d448abc37c15bc03fad9 = L.polyline(
-                [[26.439817, 127.829342], [26.44111, 127.71361], [26.315851, 127.757669]],
-                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(feature_group_1fe93c8b18caee17a5596083e51dfc4b);
+            marker_5a9f485cdbaf1132973555320227ca80.bindTooltip(
+                `<div>
+                     2/7｜美浜アメリカンビレッジ
+                 </div>`,
+                {"sticky": true}
+            );
         
     
-            var feature_group_bf44d0e52c6fece8bf05183149191cd7 = L.featureGroup(
+            var poly_line_72e5466b25ed3272ab5cabe9ed118ac9 = L.polyline(
+                [[26.43892, 127.83136], [26.44111, 127.71361], [26.315851, 127.757669]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_6dbc227f170fdfad23e6de7a626d72eb);
+        
+    
+            var marker_b4289d425208b450b11e9031a094b999 = L.marker(
+                [26.362895, 127.808937],
                 {}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(feature_group_6dbc227f170fdfad23e6de7a626d72eb);
         
     
-            var marker_66b0346a0c0d9ffe1b0c0e118704c37a = L.marker(
+            var icon_56bf3c9de5188b5753a938515c6f862d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "play", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b4289d425208b450b11e9031a094b999.setIcon(icon_56bf3c9de5188b5753a938515c6f862d);
+        
+    
+        var popup_1c2ed14dc9e3713d4d14242f10511e12 = L.popup({"maxWidth": 300});
+
+        
+            var html_016feaf75f964d9363996413337c5c74 = $(`<div id="html_016feaf75f964d9363996413337c5c74" style="width: 100.0%; height: 100.0%;"><b>2/7 自駕路線（從 Riverside 出發/返回）</b><br><a href="https://www.google.com/maps/dir/?api=1&origin=26.362895,127.808937&destination=26.362895,127.808937&travelmode=driving&waypoints=26.43892,127.83136|26.44111,127.71361|26.315851,127.757669" target="_blank">在 Google Maps 開啟導航</a></div>`)[0];
+            popup_1c2ed14dc9e3713d4d14242f10511e12.setContent(html_016feaf75f964d9363996413337c5c74);
+        
+
+        marker_b4289d425208b450b11e9031a094b999.bindPopup(popup_1c2ed14dc9e3713d4d14242f10511e12)
+        ;
+
+        
+    
+    
+            var feature_group_95e0ec15dbdba2aedceca6e1a152f035 = L.featureGroup(
+                {}
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+        
+    
+            var marker_11e272eb56012b8adcaa23dc7d6d8884 = L.marker(
                 [26.210842, 127.670143],
                 {}
-            ).addTo(feature_group_bf44d0e52c6fece8bf05183149191cd7);
+            ).addTo(feature_group_95e0ec15dbdba2aedceca6e1a152f035);
         
     
-            var icon_36a5b2d1dd351681a41fd8deb8698a95 = L.AwesomeMarkers.icon(
+            var icon_df5e17109b113a4617694bcc1ee31eac = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_66b0346a0c0d9ffe1b0c0e118704c37a.setIcon(icon_36a5b2d1dd351681a41fd8deb8698a95);
+            marker_11e272eb56012b8adcaa23dc7d6d8884.setIcon(icon_df5e17109b113a4617694bcc1ee31eac);
         
     
-        var popup_0285a3d570fcb7c98e71c00ee82a5c33 = L.popup({"maxWidth": "100%"});
+        var popup_fbed5a234faa22f8ab1b778cb4f67b0e = L.popup({"maxWidth": "100%"});
 
         
-            var html_88b1f63d7f5dff70c6164153360d3acf = $(`<div id="html_88b1f63d7f5dff70c6164153360d3acf" style="width: 100.0%; height: 100.0%;">2/8｜半潜水式観光船 ORCA 集合（那覇埠頭旅客待合所）</div>`)[0];
-            popup_0285a3d570fcb7c98e71c00ee82a5c33.setContent(html_88b1f63d7f5dff70c6164153360d3acf);
+            var html_491877d98978488be7eb9b92fa228b39 = $(`<div id="html_491877d98978488be7eb9b92fa228b39" style="width: 100.0%; height: 100.0%;">1. 2/8｜半潜水式観光船 ORCA 集合（那覇埠頭 旅客待合所）</div>`)[0];
+            popup_fbed5a234faa22f8ab1b778cb4f67b0e.setContent(html_491877d98978488be7eb9b92fa228b39);
         
 
-        marker_66b0346a0c0d9ffe1b0c0e118704c37a.bindPopup(popup_0285a3d570fcb7c98e71c00ee82a5c33)
+        marker_11e272eb56012b8adcaa23dc7d6d8884.bindPopup(popup_fbed5a234faa22f8ab1b778cb4f67b0e)
         ;
 
         
     
     
-            var marker_85649ba16fff040728c82542b2fc5bef = L.marker(
+            marker_11e272eb56012b8adcaa23dc7d6d8884.bindTooltip(
+                `<div>
+                     2/8｜半潜水式観光船 ORCA 集合（那覇埠頭 旅客待合所）
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0f0c8b715549a59e19ca945ac1ec61a5 = L.marker(
                 [26.254435, 127.726964],
                 {}
-            ).addTo(feature_group_bf44d0e52c6fece8bf05183149191cd7);
+            ).addTo(feature_group_95e0ec15dbdba2aedceca6e1a152f035);
         
     
-            var icon_bb150dcffef33b9331f2b33287185a74 = L.AwesomeMarkers.icon(
+            var icon_df532f5716197045d6ca7b81c69b90c2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_85649ba16fff040728c82542b2fc5bef.setIcon(icon_bb150dcffef33b9331f2b33287185a74);
+            marker_0f0c8b715549a59e19ca945ac1ec61a5.setIcon(icon_df532f5716197045d6ca7b81c69b90c2);
         
     
-        var popup_724a76afa32a68112bce05034f5cc8e5 = L.popup({"maxWidth": "100%"});
+        var popup_69a24209ae19c34733ba8cac4b5fa800 = L.popup({"maxWidth": "100%"});
 
         
-            var html_c7ceb1ee0b799ae50d5ec17506cf029c = $(`<div id="html_c7ceb1ee0b799ae50d5ec17506cf029c" style="width: 100.0%; height: 100.0%;">2/8｜浦添大公園</div>`)[0];
-            popup_724a76afa32a68112bce05034f5cc8e5.setContent(html_c7ceb1ee0b799ae50d5ec17506cf029c);
+            var html_5a072a4929c903a0d296052d1780ca45 = $(`<div id="html_5a072a4929c903a0d296052d1780ca45" style="width: 100.0%; height: 100.0%;">2. 2/8｜浦添大公園</div>`)[0];
+            popup_69a24209ae19c34733ba8cac4b5fa800.setContent(html_5a072a4929c903a0d296052d1780ca45);
         
 
-        marker_85649ba16fff040728c82542b2fc5bef.bindPopup(popup_724a76afa32a68112bce05034f5cc8e5)
+        marker_0f0c8b715549a59e19ca945ac1ec61a5.bindPopup(popup_69a24209ae19c34733ba8cac4b5fa800)
         ;
 
         
     
     
-            var marker_ea574111c5586cf41a567f3ba8011095 = L.marker(
+            marker_0f0c8b715549a59e19ca945ac1ec61a5.bindTooltip(
+                `<div>
+                     2/8｜浦添大公園
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5ef2ae7c625622eabec70cec6df09d45 = L.marker(
                 [26.213662, 127.680483],
                 {}
-            ).addTo(feature_group_bf44d0e52c6fece8bf05183149191cd7);
+            ).addTo(feature_group_95e0ec15dbdba2aedceca6e1a152f035);
         
     
-            var icon_d918f8123a310c7779da7f067e767ccb = L.AwesomeMarkers.icon(
+            var icon_59a9073c31b593d01cb2c9e57f6c6c45 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_ea574111c5586cf41a567f3ba8011095.setIcon(icon_d918f8123a310c7779da7f067e767ccb);
+            marker_5ef2ae7c625622eabec70cec6df09d45.setIcon(icon_59a9073c31b593d01cb2c9e57f6c6c45);
         
     
-        var popup_cde40c275297e4e18aa88997035e70fc = L.popup({"maxWidth": "100%"});
+        var popup_7bfb8bfd46e66fbb9768df976352ca4e = L.popup({"maxWidth": "100%"});
 
         
-            var html_b7706d21adc0262a781d8c3b88761b90 = $(`<div id="html_b7706d21adc0262a781d8c3b88761b90" style="width: 100.0%; height: 100.0%;">2/8｜国際通</div>`)[0];
-            popup_cde40c275297e4e18aa88997035e70fc.setContent(html_b7706d21adc0262a781d8c3b88761b90);
+            var html_0b674ccbd2ba5f38e2074c7497ffce66 = $(`<div id="html_0b674ccbd2ba5f38e2074c7497ffce66" style="width: 100.0%; height: 100.0%;">3. 2/8｜国際通</div>`)[0];
+            popup_7bfb8bfd46e66fbb9768df976352ca4e.setContent(html_0b674ccbd2ba5f38e2074c7497ffce66);
         
 
-        marker_ea574111c5586cf41a567f3ba8011095.bindPopup(popup_cde40c275297e4e18aa88997035e70fc)
+        marker_5ef2ae7c625622eabec70cec6df09d45.bindPopup(popup_7bfb8bfd46e66fbb9768df976352ca4e)
         ;
 
         
     
     
-            var poly_line_7f063f92d2bf03ee889e452f9a04cd64 = L.polyline(
+            marker_5ef2ae7c625622eabec70cec6df09d45.bindTooltip(
+                `<div>
+                     2/8｜国際通
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_90982781b3d8128c64ee691bc7828869 = L.polyline(
                 [[26.210842, 127.670143], [26.254435, 127.726964], [26.213662, 127.680483]],
-                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(feature_group_bf44d0e52c6fece8bf05183149191cd7);
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_95e0ec15dbdba2aedceca6e1a152f035);
         
     
-            var feature_group_e802ee0b06978847c9d7b797d9895552 = L.featureGroup(
+            var marker_860e34e5804ec719608c794787e640a6 = L.marker(
+                [26.219794, 127.68362],
                 {}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
+            ).addTo(feature_group_95e0ec15dbdba2aedceca6e1a152f035);
         
     
-            var marker_6367d8c5acaa077ec18242ec0a513fb2 = L.marker(
+            var icon_6a4e1e253b5a1ac89fd9d68c9492967e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "play", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_860e34e5804ec719608c794787e640a6.setIcon(icon_6a4e1e253b5a1ac89fd9d68c9492967e);
+        
+    
+        var popup_df11696df6cd7bca5795f47b915dfd8f = L.popup({"maxWidth": 300});
+
+        
+            var html_fc3c0e49016becaf20650b877097b2a1 = $(`<div id="html_fc3c0e49016becaf20650b877097b2a1" style="width: 100.0%; height: 100.0%;"><b>2/8 自駕路線（從 Residential Hotel Naha 出發/返回）</b><br><a href="https://www.google.com/maps/dir/?api=1&origin=26.219794,127.68362&destination=26.219794,127.68362&travelmode=driving&waypoints=26.210842,127.670143|26.254435,127.726964|26.213662,127.680483" target="_blank">在 Google Maps 開啟導航</a></div>`)[0];
+            popup_df11696df6cd7bca5795f47b915dfd8f.setContent(html_fc3c0e49016becaf20650b877097b2a1);
+        
+
+        marker_860e34e5804ec719608c794787e640a6.bindPopup(popup_df11696df6cd7bca5795f47b915dfd8f)
+        ;
+
+        
+    
+    
+            var feature_group_fdcdd8c58e071f1de29edf2f737a9f44 = L.featureGroup(
+                {}
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+        
+    
+            var marker_461879b116ae3e96e2b3c37b66d34ba5 = L.marker(
                 [26.220828, 127.671007],
                 {}
-            ).addTo(feature_group_e802ee0b06978847c9d7b797d9895552);
+            ).addTo(feature_group_fdcdd8c58e071f1de29edf2f737a9f44);
         
     
-            var icon_4f7a92e98cd5301d4c69371ea829d7d5 = L.AwesomeMarkers.icon(
+            var icon_e37a6bd4b4b49d3907ea679ea05a8c48 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
             );
-            marker_6367d8c5acaa077ec18242ec0a513fb2.setIcon(icon_4f7a92e98cd5301d4c69371ea829d7d5);
+            marker_461879b116ae3e96e2b3c37b66d34ba5.setIcon(icon_e37a6bd4b4b49d3907ea679ea05a8c48);
         
     
-        var popup_1de530b32ae7405f23439691f689de94 = L.popup({"maxWidth": "100%"});
+        var popup_67acba672ff64719af2e63b3e44510b1 = L.popup({"maxWidth": "100%"});
 
         
-            var html_72d92b4fe67088301221482105dc8e3d = $(`<div id="html_72d92b4fe67088301221482105dc8e3d" style="width: 100.0%; height: 100.0%;">2/9｜波上宮</div>`)[0];
-            popup_1de530b32ae7405f23439691f689de94.setContent(html_72d92b4fe67088301221482105dc8e3d);
+            var html_64dee923d1480c1951df1d99a6826697 = $(`<div id="html_64dee923d1480c1951df1d99a6826697" style="width: 100.0%; height: 100.0%;">1. 2/9｜波上宮</div>`)[0];
+            popup_67acba672ff64719af2e63b3e44510b1.setContent(html_64dee923d1480c1951df1d99a6826697);
         
 
-        marker_6367d8c5acaa077ec18242ec0a513fb2.bindPopup(popup_1de530b32ae7405f23439691f689de94)
+        marker_461879b116ae3e96e2b3c37b66d34ba5.bindPopup(popup_67acba672ff64719af2e63b3e44510b1)
         ;
 
         
     
     
-            var marker_57287ce1eefd413825a24e59c13aedaf = L.marker(
+            marker_461879b116ae3e96e2b3c37b66d34ba5.bindTooltip(
+                `<div>
+                     2/9｜波上宮
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c3f95ee42ca94657ba9548c5919f2dc = L.marker(
                 [26.221083, 127.672056],
                 {}
-            ).addTo(feature_group_e802ee0b06978847c9d7b797d9895552);
+            ).addTo(feature_group_fdcdd8c58e071f1de29edf2f737a9f44);
         
     
-            var icon_cedfd5dea8ea635bac8e281e72eddf2f = L.AwesomeMarkers.icon(
+            var icon_30aac26f24d07836c035d3419062d560 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
             );
-            marker_57287ce1eefd413825a24e59c13aedaf.setIcon(icon_cedfd5dea8ea635bac8e281e72eddf2f);
+            marker_6c3f95ee42ca94657ba9548c5919f2dc.setIcon(icon_30aac26f24d07836c035d3419062d560);
         
     
-        var popup_9ddf4a36a138817469e1cb3ff11bfced = L.popup({"maxWidth": "100%"});
+        var popup_e18d867519588952d98097a2fb1a612b = L.popup({"maxWidth": "100%"});
 
         
-            var html_6b25ed19df5445fd4e87d0957840af93 = $(`<div id="html_6b25ed19df5445fd4e87d0957840af93" style="width: 100.0%; height: 100.0%;">2/9｜波の上ビーチ</div>`)[0];
-            popup_9ddf4a36a138817469e1cb3ff11bfced.setContent(html_6b25ed19df5445fd4e87d0957840af93);
+            var html_6d273313ade064a6415ca6a20470595c = $(`<div id="html_6d273313ade064a6415ca6a20470595c" style="width: 100.0%; height: 100.0%;">2. 2/9｜波の上ビーチ</div>`)[0];
+            popup_e18d867519588952d98097a2fb1a612b.setContent(html_6d273313ade064a6415ca6a20470595c);
         
 
-        marker_57287ce1eefd413825a24e59c13aedaf.bindPopup(popup_9ddf4a36a138817469e1cb3ff11bfced)
+        marker_6c3f95ee42ca94657ba9548c5919f2dc.bindPopup(popup_e18d867519588952d98097a2fb1a612b)
         ;
 
         
     
     
-            var marker_d98e6a51161e6178131b662a054aa873 = L.marker(
+            marker_6c3f95ee42ca94657ba9548c5919f2dc.bindTooltip(
+                `<div>
+                     2/9｜波の上ビーチ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_56178e70125e693e55f800de77a93933 = L.marker(
                 [26.213662, 127.680483],
                 {}
-            ).addTo(feature_group_e802ee0b06978847c9d7b797d9895552);
+            ).addTo(feature_group_fdcdd8c58e071f1de29edf2f737a9f44);
         
     
-            var icon_f1b534b43620906347fe3c09dc7ac17c = L.AwesomeMarkers.icon(
+            var icon_b7d4db5df0cfabc7a9edc76b1194cc0b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
             );
-            marker_d98e6a51161e6178131b662a054aa873.setIcon(icon_f1b534b43620906347fe3c09dc7ac17c);
+            marker_56178e70125e693e55f800de77a93933.setIcon(icon_b7d4db5df0cfabc7a9edc76b1194cc0b);
         
     
-        var popup_5e1a62d43a6292a396413641acb9dded = L.popup({"maxWidth": "100%"});
+        var popup_eef5c50e9bdd9949850f5c2e5f2aa856 = L.popup({"maxWidth": "100%"});
 
         
-            var html_12db1dc5d25cdbb55766d4d1203a832c = $(`<div id="html_12db1dc5d25cdbb55766d4d1203a832c" style="width: 100.0%; height: 100.0%;">2/9｜国際通（最後採買）</div>`)[0];
-            popup_5e1a62d43a6292a396413641acb9dded.setContent(html_12db1dc5d25cdbb55766d4d1203a832c);
+            var html_661dd068f612d4e8946760a0c0cfff33 = $(`<div id="html_661dd068f612d4e8946760a0c0cfff33" style="width: 100.0%; height: 100.0%;">3. 2/9｜国際通（最後採買）</div>`)[0];
+            popup_eef5c50e9bdd9949850f5c2e5f2aa856.setContent(html_661dd068f612d4e8946760a0c0cfff33);
         
 
-        marker_d98e6a51161e6178131b662a054aa873.bindPopup(popup_5e1a62d43a6292a396413641acb9dded)
+        marker_56178e70125e693e55f800de77a93933.bindPopup(popup_eef5c50e9bdd9949850f5c2e5f2aa856)
         ;
 
         
     
     
-            var poly_line_55cfc751b633f16b4ca03e5f91b18335 = L.polyline(
-                [[26.220828, 127.671007], [26.221083, 127.672056], [26.213662, 127.680483]],
-                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(feature_group_e802ee0b06978847c9d7b797d9895552);
+            marker_56178e70125e693e55f800de77a93933.bindTooltip(
+                `<div>
+                     2/9｜国際通（最後採買）
+                 </div>`,
+                {"sticky": true}
+            );
         
     
-            var layer_control_b0e06aef027526abb557b3a2868a2931 = {
+            var poly_line_bb7c85614e760d285345c2c24a219793 = L.polyline(
+                [[26.220828, 127.671007], [26.221083, 127.672056], [26.213662, 127.680483]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_fdcdd8c58e071f1de29edf2f737a9f44);
+        
+    
+            var marker_86c7f0faad638e634ceb86c288203c0a = L.marker(
+                [26.219794, 127.68362],
+                {}
+            ).addTo(feature_group_fdcdd8c58e071f1de29edf2f737a9f44);
+        
+    
+            var icon_a5614544d1c11b64cfe9734d4c7ebc5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "play", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_86c7f0faad638e634ceb86c288203c0a.setIcon(icon_a5614544d1c11b64cfe9734d4c7ebc5c);
+        
+    
+        var popup_fe6db330a63493a8452293544987d9fc = L.popup({"maxWidth": 300});
+
+        
+            var html_5dcb247a5528a5121e5c2adbeec5b8c7 = $(`<div id="html_5dcb247a5528a5121e5c2adbeec5b8c7" style="width: 100.0%; height: 100.0%;"><b>2/9 自駕路線（從 Residential Hotel Naha 出發/返回）</b><br><a href="https://www.google.com/maps/dir/?api=1&origin=26.219794,127.68362&destination=26.219794,127.68362&travelmode=driving&waypoints=26.220828,127.671007|26.221083,127.672056|26.213662,127.680483" target="_blank">在 Google Maps 開啟導航</a></div>`)[0];
+            popup_fe6db330a63493a8452293544987d9fc.setContent(html_5dcb247a5528a5121e5c2adbeec5b8c7);
+        
+
+        marker_86c7f0faad638e634ceb86c288203c0a.bindPopup(popup_fe6db330a63493a8452293544987d9fc)
+        ;
+
+        
+    
+    
+            var layer_control_3ea0772f7668429d67ed4623e402785f = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_a18efdffbdd56a9fe409f35b7c9f2818,
+                    "openstreetmap" : tile_layer_571650a33774d1d23c1d18ddbfcb3632,
                 },
                 overlays :  {
-                    "\u4f4f\u5bbf\uff08\u5168\u90e8\uff09" : feature_group_e7d59fed070688333c1fa76c2bc891ba,
-                    "2/5 \u8c50\u898b\u5e02\uff08DMM\u30fb\u7028\u9577\u5cf6\u30fbAshibinaa\uff09" : feature_group_bbddea245d3c3b059c64dff251667081,
-                    "2/6 \u6c96\u7e69\u5e02\uff08\u3053\u3069\u3082\u306e\u56fd\u30fbAEON Rycom\uff09" : feature_group_3999debf9b11698fb3a72a810b7f41cd,
-                    "2/7 \u3046\u308b\u307e\u30fb\u8aad\u8c37\u30fb\u5317\u8c37\uff08\u91e3\u308a\u30fb\u6b8b\u6ce2\u5cac\u30fb\u30a2\u30e1\u30ea\u30ab\u30f3\u30d3\u30ec\u30c3\u30b8\uff09" : feature_group_1fe93c8b18caee17a5596083e51dfc4b,
-                    "2/8 \u90a3\u8987\uff08ORCA\u30fb\u6d66\u6dfb\u5927\u516c\u5712\u30fb\u56fd\u969b\u901a\uff09" : feature_group_bf44d0e52c6fece8bf05183149191cd7,
-                    "2/9 \u90a3\u8987\uff08\u6ce2\u4e0a\u5bae\u30fb\u6ce2\u306e\u4e0a\u30d3\u30fc\u30c1\u30fb\u56fd\u969b\u901a\uff09" : feature_group_e802ee0b06978847c9d7b797d9895552,
+                    "\ud83c\udfe8 \u4f4f\u5bbf\uff08\u5168\u90e8\uff09" : feature_group_66d3d3b2c5cd669e7236fd8cdf6d5d3f,
+                    "2/5 \u8c50\u898b\u5e02\uff08DMM\u30fb\u7028\u9577\u5cf6\u30fbAshibinaa\uff09" : feature_group_8893c2225640ccda79a6dbdee7c4bca1,
+                    "2/6 \u6c96\u7e69\u5e02\uff08\u3053\u3069\u3082\u306e\u56fd\u30fbAEON Rycom\uff09" : feature_group_8912f65ab2888fa9316ad0d5d890bad2,
+                    "2/7 \u3046\u308b\u307e\u30fb\u8aad\u8c37\u30fb\u5317\u8c37\uff08\u91e3\u308a\u30fb\u6b8b\u6ce2\u5cac\u30fb\u30a2\u30e1\u30ea\u30ab\u30f3\u30d3\u30ec\u30c3\u30b8\uff09" : feature_group_6dbc227f170fdfad23e6de7a626d72eb,
+                    "2/8 \u90a3\u8987\uff08ORCA\u30fb\u6d66\u6dfb\u5927\u516c\u5712\u30fb\u56fd\u969b\u901a\uff09" : feature_group_95e0ec15dbdba2aedceca6e1a152f035,
+                    "2/9 \u90a3\u8987\uff08\u6ce2\u4e0a\u5bae\u30fb\u6ce2\u306e\u4e0a\u30d3\u30fc\u30c1\u30fb\u56fd\u969b\u901a\uff09" : feature_group_fdcdd8c58e071f1de29edf2f737a9f44,
                 },
             };
             L.control.layers(
-                layer_control_b0e06aef027526abb557b3a2868a2931.base_layers,
-                layer_control_b0e06aef027526abb557b3a2868a2931.overlays,
+                layer_control_3ea0772f7668429d67ed4623e402785f.base_layers,
+                layer_control_3ea0772f7668429d67ed4623e402785f.overlays,
                 {"autoZIndex": true, "collapsed": true, "position": "topright"}
-            ).addTo(map_6b2b3ace78f34f37a1c523ad76838444);
-            feature_group_3999debf9b11698fb3a72a810b7f41cd.remove();
-            feature_group_1fe93c8b18caee17a5596083e51dfc4b.remove();
-            feature_group_bf44d0e52c6fece8bf05183149191cd7.remove();
-            feature_group_e802ee0b06978847c9d7b797d9895552.remove();
+            ).addTo(map_2618443a6e46579e58a3163e10724baa);
+            feature_group_8912f65ab2888fa9316ad0d5d890bad2.remove();
+            feature_group_6dbc227f170fdfad23e6de7a626d72eb.remove();
+            feature_group_95e0ec15dbdba2aedceca6e1a152f035.remove();
+            feature_group_fdcdd8c58e071f1de29edf2f737a9f44.remove();
         
 </script>
 </html>
